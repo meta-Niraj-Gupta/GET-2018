@@ -6,61 +6,62 @@ import java.util.NoSuchElementException;
  * @author Niraj Gupta
  *
  * Class to implement the queue using link list an implementing queue interface and performing 
- * basic queue operation like adding element at rear, deleting element form front etc.
- * @param <DataType>
+ * basic queue operation like enqueueing element at rear, deleting element form front etc.
+ * @param <T>
  */
-public class QueueUsingLinkList<DataType> implements Queue<DataType>{
-	private Node<DataType> first, last;
+public class QueueUsingLinkList<T> implements Queue<T>{
+	private Node<T> front, rear;
+	private int size;
 	
 	/**
 	 * @author Niraj Gupta
 	 * 
 	 * Class to create a node which is the used to create a link list.
-	 * @param <DataType> : The user decide which data type to be used.
+	 * @param <T> : The user decide which data type to be used.
 	 */
-    private static class Node<DataType>{
-        private DataType data;
+    private static class Node<T>{
+        private T data;
 
-        private Node<DataType> back;
+        private Node<T> next;
         
         /**
          * Parameterized Constructor : Creating a node with a value in it.
          * @param element : The element or data which is stored inside the node.
          */
-        public Node(DataType element){
+        public Node(T element){
             data = element;
         }
     }
     
     /**
      * Method to insert element to the rear of the queue.
-     * @return : The new queue object after adding the new element.
+     * @return : The new queue object after enqueueing the new element.
      */
     @Override
-    public Queue<DataType> add(DataType element){
-        Node<DataType> newElement = new Node<DataType>(element);
-        if(first == null){
-            first = newElement;
+    public Queue<T> enqueue(T element){
+        Node<T> newElement = new Node<T>(element);
+        if(front == null){
+            front = newElement;
         }else{
-            if(first.back == null){
-                first.back = newElement;
+            if(front.next == null){
+                front.next = newElement;
             }else{
-                last.back = newElement;
+                rear.next = newElement;
             }
 
-            last = newElement;
+            rear = newElement;
         }
-
+        size++;
         return this;
     }
     
     /**
-     * Method to check if the element can be added to the queue or not it is similar to isFull() from stack.
+     * Method to check if the element can be enqueueed to the queue or not it is similar to isFull() from stack.
      * @return : True if the insertion of new element to the queue is successful, false otherwise
      */
     @Override
-    public boolean checkIfElementCanBeAdded(DataType element){
-        add(element);
+    public boolean checkIfElementCanBeenqueued(T element){
+        enqueue(element);
         return true;
     }
     
@@ -69,8 +70,8 @@ public class QueueUsingLinkList<DataType> implements Queue<DataType>{
      * @return : The front element of the queue.
      */
     @Override
-    public DataType getFront(){
-        return first == null ? null : first.data;
+    public T getFront(){
+        return front == null ? null : front.data;
     }
     
     /**
@@ -79,15 +80,20 @@ public class QueueUsingLinkList<DataType> implements Queue<DataType>{
      * @throw NoSuchElementException : If the queue is empty and there is no element to delete.
      */
     @Override
-    public DataType poll(){
-        if(first == null){
+    public T dequeue(){
+        if(front == null){
             throw new NoSuchElementException("Underflow : Queue is empty.");
         }
 
-        DataType output = first.data;
-        first = first.back;
-
+        T output = front.data;
+        front = front.next;
+        size--;
         return output;
     }
+
+	@Override
+	public int size() {
+		return size;
+	}
 
 }

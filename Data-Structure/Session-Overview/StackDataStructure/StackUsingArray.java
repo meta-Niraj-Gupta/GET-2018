@@ -6,10 +6,10 @@ import java.util.NoSuchElementException;
  * @author Niraj Gupta
  *
  * Class to implement stack using an array of fixed size by implementing the stack interface.
- * @param <DataType> : The Data type which user select to create an stack.
+ * @param <T> : The Data type which user select to create an stack.
  */
-public class StackUsingArray<DataType> implements Stack<DataType>{
-	private DataType[] stackArray;
+public class StackUsingArray<T> implements Stack<T>{
+	private T[] stackArray;
 	private int topOfStack;
 	private final static int DEFAULT_SIZE = 10;
 	
@@ -25,7 +25,7 @@ public class StackUsingArray<DataType> implements Stack<DataType>{
 	 * @param stackCapacity : The maximum size of stack entered by the user.
 	 */
 	public StackUsingArray(int stackCapacity){
-		stackArray = (DataType[]) new Object[stackCapacity];
+		stackArray = (T[]) new Object[stackCapacity];
 		topOfStack = -1;
 	}
 	
@@ -35,7 +35,7 @@ public class StackUsingArray<DataType> implements Stack<DataType>{
 	 * @throws : NoSuchElementException if the stack is empty. Since there is no element to be deleted.
 	 */
 	@Override
-	public DataType getTopElement(){
+	public T getTopElement(){
 		if(isEmpty()){
 			throw new NoSuchElementException("UnderFlow : The stack is empty.");
 		}else{
@@ -48,7 +48,7 @@ public class StackUsingArray<DataType> implements Stack<DataType>{
 	 * @throws : IndexOutOfBoundsException if the stack is full.
 	 */
 	@Override
-	public void push(DataType element){
+	public void push(T element){
 		if(isFull()){
 			throw new IndexOutOfBoundsException("OverFlow : The stack is full.");
 		}else{
@@ -62,7 +62,7 @@ public class StackUsingArray<DataType> implements Stack<DataType>{
 	 * @throws : NoSuchElementException if the stack is empty.
 	 */
 	@Override
-	public DataType pop(){
+	public T pop(){
 		if(isEmpty()){
 			throw new NoSuchElementException("UnderFlow : The stack is empty. No element to remove.");
 		}else{
