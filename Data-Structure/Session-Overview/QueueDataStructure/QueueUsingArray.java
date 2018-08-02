@@ -94,7 +94,9 @@ public class QueueUsingArray<T> implements Queue<T>{
         size--;
         return output;
     }
-
+	/**
+	* Method to get the size of the queue.
+	* @return : The total number of element present in the queue.
 	@Override
 	public int size(){
 		return size;
