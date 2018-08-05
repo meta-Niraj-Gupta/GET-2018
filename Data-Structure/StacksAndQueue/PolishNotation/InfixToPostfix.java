@@ -64,16 +64,16 @@ public class InfixToPostfix{
 				while(!stack.isEmpty() && !("(".equals(stack.getTopElement()))){
 					postfixExpression += stack.pop() + " ";
 				}
-                stack.pop();
+                		stack.pop();
 			}else{
 				postfixExpression += expression[i] + " ";
-            }
+           		}
 		}
 		while(!stack.isEmpty()){
 			postfixExpression += stack.pop() + " ";
 		}
       
-        return postfixExpression.trim();
+        	return postfixExpression.trim();
 	}
 	
 	/**
