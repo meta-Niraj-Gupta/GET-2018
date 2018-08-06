@@ -28,4 +28,11 @@ public class Students{
 	public String getProgramAllotted(){
 		return programAllotted;
 	}
+	
+	@Override
+	public String toString() {
+		return "Student [name=" + studentName + ", programPreference="
+				+ preferences + ", programAllottedName="
+				+ programAllotted + "]";
+	}
 }
