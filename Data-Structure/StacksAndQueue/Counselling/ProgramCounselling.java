@@ -16,10 +16,19 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * @author Niraj Gupta
+ * Class to read the input from the excel sheet and writing the output to another excel sheet.
+ *
+ */
 public class ProgramCounselling{
 	public static List<Students> students = new ArrayList<Students>();
 	public static List<ProgramsOffered> programsOffered = new ArrayList<ProgramsOffered>();
-
+	
+	/**
+	 * Method to read the excel sheet containing the student preferences about the programs offered by the college.
+	 * @return : A list of students containing the name of the student and their preferences.
+	 */
 	public static List<Students> readStudentPreferencesViaExcelSheet(){
 		try{
 			FileInputStream file = new FileInputStream(new File("C:\\Users\\User14\\Downloads\\StudentPreference.xlsx"));
@@ -48,7 +57,11 @@ public class ProgramCounselling{
 		}
 		return students;
 	}
-
+	
+	/**
+	 * Method to read from excel sheet the programs offered by the college with their maximum capacity.
+	 * @return : The list of programs offered by the college.
+	 */
 	public static List<ProgramsOffered> readProgramOfferedViaExcelSheet(){
 		try{
 			FileInputStream file = new FileInputStream(new File("C:\\Users\\User14\\Downloads\\programNameAndCapacity.xlsx"));
@@ -74,9 +87,12 @@ public class ProgramCounselling{
 		return programsOffered;
 	}
 
-
 	private static final String FILE_NAME = "C:\\Users\\User14\\Downloads\\ResultOfStudentCounselling.xlsx";
-
+	
+	/**
+	 * Main method to write the output to the new excel sheet.
+	 * @param args
+	 */
 	public static void main(String[] args){
 
 		XSSFWorkbook workbook = new XSSFWorkbook();
@@ -111,7 +127,12 @@ public class ProgramCounselling{
 
 		System.out.println("Done");
 	}
-
+	
+	/**
+	 * Method to write data to each cell of a row in excel sheet.
+	 * @param student : The list of student having name and the program to which they are allotted.
+	 * @param row : The reference to the row to which we are currently writing.
+	 */
 	private static void writeBook(Students student, Row row){
 		Cell cell = row.createCell(0);
 		cell.setCellValue(student.getName());
