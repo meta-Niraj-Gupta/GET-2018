@@ -10,7 +10,7 @@ import QueueDataStructure.QueueUsingLinkList;
 public class CollegeOfferingProgram{
 	private QueueUsingLinkList<Students> programQueue;
 	private Map<String, ProgramsOffered> programs;
-	
+
 	public CollegeOfferingProgram(List<ProgramsOffered> programs){
 		this.programs = new HashMap<>();
 		// Adds all programs to the map
@@ -21,7 +21,7 @@ public class CollegeOfferingProgram{
 		}
 		programQueue = new QueueUsingLinkList<Students>();
 	}
-	
+
 	public List<Students> counselling() throws QueueOverFlowException{
 		List<Students> driveResults = new ArrayList<Students>();
 		// Entertain every student one by one based on rank
@@ -42,7 +42,7 @@ public class CollegeOfferingProgram{
 		}
 		return driveResults;
 	}
-	
+
 	public void enqueueStudent(Students student){
 		programQueue.enqueue(student);
 	}
