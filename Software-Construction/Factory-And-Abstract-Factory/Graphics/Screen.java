@@ -6,15 +6,28 @@ import java.util.List;
 
 import Graphics.Shapes.ShapeType;
 
+/**
+ * @author Niraj Gupta
+ * Class to represent the screen on which the shapes are drawn.
+ */
 public class Screen{
 	private List<Shapes> listOfShapes = new ArrayList<>();
 	private final double XMAX, YMAX;
 
+	/**
+	 * Parameterized Constructor
+	 * @param xMax : The maximum length of the screen.
+	 * @param yMax : The maximum breadth of the screen.
+	 */
 	public Screen(double xMax, double yMax){
 		XMAX = xMax;
 		YMAX = yMax;
 	}
 
+	/**
+	 * Method to add shape on the screen
+	 * @param shape : The shape which is to be added on the screen.
+	 */
 	public void addShape(Shapes shape){
 		if(shape == null){
 			throw new AssertionError("Null object");
@@ -27,6 +40,10 @@ public class Screen{
 		shape.setTimestamp(new Date());
 	}
 
+	/**
+	 * Method to remove the shape from the screen.
+	 * @param shape : The shape which is to be removed from the screen.
+	 */
 	public void deleteShape(Shapes shape){
 		if(listOfShapes.contains(shape)){
 			listOfShapes.remove(shape);
@@ -35,6 +52,10 @@ public class Screen{
 		}
 	}
 
+	/**
+	 * Method to remove all the shapes from the screen belonging to a particular screen type.
+	 * @param shapeType : The type of the shape which is to be removed.
+	 */
 	public void deleteShapeType(ShapeType shapeType){
 		boolean flag = false;
 		List<Shapes> removeList = new ArrayList<>();
@@ -51,6 +72,10 @@ public class Screen{
 		}
 	}
 
+	/**
+	 * Method to sort the shapes on the basis of their area.
+	 * @return : The sorted list of shape.
+	 */
 	public List<Shapes> sortByArea(){
 		List<Shapes> sortedListByArea = new ArrayList<>(listOfShapes);
 		int noOfObjects = listOfShapes.size();
@@ -71,6 +96,10 @@ public class Screen{
 		return sortedListByArea;
 	}
 
+	/**
+	 * Method to sort the shapes on the basis of their perimeter.
+	 * @return : The sorted list of the shape.
+	 */
 	public List<Shapes> sortByPerimeter(){
 		List<Shapes> sortedListByPerimeter = listOfShapes;
 		int noOfObjects = sortedListByPerimeter.size();
@@ -91,6 +120,10 @@ public class Screen{
 		return sortedListByPerimeter;
 	}
 
+	/**
+	 * Method to sort the shapes based on their distance from the origin of the screen.
+	 * @return : The sorted list of the shape.
+	 */
 	public List<Shapes> sortByOriginDistance(){
 		List<Shapes> sortedListByOriginDistance = listOfShapes;
 		int noOfObjects = sortedListByOriginDistance.size();
@@ -111,6 +144,10 @@ public class Screen{
 		return sortedListByOriginDistance;
 	}
 
+	/**
+	 * Method to sort the shape on the basis of the time on which they were added on the screen.
+	 * @return : The sorted list of the shape.
+	 */
 	public List<Shapes> sortByTimestamp(){
 		if (listOfShapes.size() == 0){
 			throw new AssertionError("List is empty! Cannot sort");
@@ -118,6 +155,11 @@ public class Screen{
 		return listOfShapes;
 	}
 
+	/**
+	 * Method to Check if the given point to draw the shape doesn't overlap the existing shape.
+	 * @param point : The point where the shape has to be drawn.
+	 * @return : The list of the shape.
+	 */
 	public List<Shapes> shapesEnclosingPoint(Point point){
 		List<Shapes> listOfShapes = new ArrayList<>();
 

@@ -2,16 +2,21 @@ package Graphics;
 
 import java.util.Date;
 
+/**
+ * @author Niraj Gupta
+ * Class to represent the Triangle by implementing the Shape interface.
+ */
 public class Triangle implements Shapes{
 	private Point origin;
 	private double sideA, sideB, sideC, originDistance, height;
 	private Date timeStamp;
 
 	/**
-	 * @param origin
-	 * @param sideA
-	 * @param sideB
-	 * @param sideC
+	 * Parameterized Constructor
+	 * @param origin : The point at which the triangle is to be drawn.
+	 * @param sideA : The length of the side of the triangle.
+	 * @param sideB : The length of the side of the triangle.
+	 * @param sideC : The length of the side of the triangle.
 	 */
 	public Triangle(Point origin, double sideA, double sideB, double sideC, double height) {
 		this.origin = origin;

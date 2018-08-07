@@ -2,6 +2,10 @@ package Graphics;
 
 import java.util.Date;
 
+/**
+ * @author Niraj Gupta
+ * Class to represent the Regular Polygon by implementing the Shape interface.
+ */
 public class RegularPolygon implements Shapes{
 	private Point origin;
 	private double length;
@@ -9,7 +13,12 @@ public class RegularPolygon implements Shapes{
 	private double originDistance;
 	private Date timeStamp;
 
-
+	/**
+	 * Parameterized Constructor
+	 * @param origin : The point at which the polygon is drawn on the screen.
+	 * @param length : The length of the side of the polygon.
+	 * @param noOfSide : The number of side polygon has.
+	 */
 	public RegularPolygon(Point origin, double length, int noOfSide){
 		this.origin = origin;
 		this.length = length;

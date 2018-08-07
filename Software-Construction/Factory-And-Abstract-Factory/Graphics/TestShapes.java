@@ -44,9 +44,7 @@ public class TestShapes{
 
 	@Test
 	public void circle_HappyFlow(){
-		Shapes circle = ShapeFactory.createShape(ShapeType.CIRCLE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(4);
-		}});
+		Shapes circle = ShapeFactory.createShape(ShapeType.CIRCLE, new Point(1, 1), Arrays.asList(4));
 
 		assertEquals(50.265, circle.getArea(), 0.001);
 		assertEquals(25.133, circle.getPerimeter(), 0.001);
@@ -72,10 +70,7 @@ public class TestShapes{
 	public void addShape_Exception_WhenTheGivenPointLieOutsideTheScreen(){
 
 		Screen screen = new Screen(100, 100);
-		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(120, 1), new ArrayList<Integer>(){{
-			add(4);
-			add(2);
-		}});
+		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(120, 1), Arrays.asList(4, 2));
 		screen.addShape(shape1);
 	}
 
@@ -83,10 +78,7 @@ public class TestShapes{
 	public void deleteShape_HappyFlow(){
 
 		Screen screen = new Screen(100, 100);
-		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(4);
-			add(2);
-		}});
+		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), Arrays.asList(4, 2));
 		screen.addShape(shape1);
 		screen.deleteShape(shape1);
 	}
@@ -102,16 +94,10 @@ public class TestShapes{
 	public void deleteShapeType_HappyFlow(){
 
 		Screen screen = new Screen(100, 100);
-		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(4);
-			add(2);
-		}});
+		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), Arrays.asList(4, 2));
 		screen.addShape(shape1);
 
-		Shapes shape2 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 3), new ArrayList<Integer>(){{
-			add(5);
-			add(2);
-		}});
+		Shapes shape2 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 3), Arrays.asList(5, 2));
 		screen.addShape(shape2);
 
 		screen.deleteShapeType(ShapeType.RECTANGLE);
@@ -127,22 +113,14 @@ public class TestShapes{
 	public void sortByArea_HappyFlow(){
 
 		Screen screen = new Screen(100, 100);
-		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(4);
-			add(2);
-		}});
+		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), Arrays.asList(4, 2));
 		screen.addShape(shape1);
 
-		Shapes shape2 = ShapeFactory.createShape(ShapeType.SQUARE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(2);
-		}});
+		Shapes shape2 = ShapeFactory.createShape(ShapeType.SQUARE, new Point(1, 1), Arrays.asList(2));
 		screen.addShape(shape2);
 
 		List<Shapes> sortedShapeByArea = screen.sortByArea();
-		assertEquals(sortedShapeByArea, new ArrayList<Shapes>(){{
-			add(shape2);
-			add(shape1);
-		}});
+		assertEquals(sortedShapeByArea, Arrays.asList(shape2, shape1));
 	}
 
 	@Test(expected = AssertionError.class)
@@ -155,22 +133,14 @@ public class TestShapes{
 	public void sortByPerimeter_HappyFlow(){
 
 		Screen screen = new Screen(100, 100);
-		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(4);
-			add(2);
-		}});
+		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), Arrays.asList(4, 2));
 		screen.addShape(shape1);
 
-		Shapes shape2 = ShapeFactory.createShape(ShapeType.SQUARE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(2);
-		}});
+		Shapes shape2 = ShapeFactory.createShape(ShapeType.SQUARE, new Point(1, 1), Arrays.asList(2));
 		screen.addShape(shape2);
 
 		List<Shapes> sortedShapeByPerimeter = screen.sortByPerimeter();
-		assertEquals(sortedShapeByPerimeter, new ArrayList<Shapes>(){{
-			add(shape2);
-			add(shape1);
-		}});
+		assertEquals(sortedShapeByPerimeter, Arrays.asList(shape2, shape1));
 	}
 
 	@Test(expected = AssertionError.class)
@@ -183,29 +153,18 @@ public class TestShapes{
 	public void sortByOriginDistance_HappyFlow(){
 
 		Screen screen = new Screen(100, 100);
-		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(4);
-			add(2);
-		}});
+		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), Arrays.asList(4, 2));
 		screen.addShape(shape1);
 
-		Shapes shape2 = ShapeFactory.createShape(ShapeType.SQUARE, new Point(2, 1), new ArrayList<Integer>(){{
-			add(2);
-		}});
+		Shapes shape2 = ShapeFactory.createShape(ShapeType.SQUARE, new Point(2, 1), Arrays.asList(2));
 		screen.addShape(shape2);
 
-		Shapes shape3 = ShapeFactory.createShape(ShapeType.CIRCLE, new Point(0, 0), new ArrayList<Integer>(){{
-			add(4);
-		}});
+		Shapes shape3 = ShapeFactory.createShape(ShapeType.CIRCLE, new Point(0, 0), Arrays.asList(4));
 		screen.addShape(shape3);
 
 		List<Shapes> sortedShapeByOriginDistance = screen.sortByOriginDistance();
 
-		assertEquals(sortedShapeByOriginDistance, new ArrayList<Shapes>(){{
-			add(shape1);
-			add(shape2);
-			add(shape3);
-		}});
+		assertEquals(sortedShapeByOriginDistance, Arrays.asList(shape1, shape2, shape3));
 	}
 
 	@Test(expected = AssertionError.class)
@@ -218,28 +177,17 @@ public class TestShapes{
 	public void sortByTimestamp_HappyFlow(){
 
 		Screen screen = new Screen(100, 100);
-		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), new ArrayList<Integer>(){{
-			add(4);
-			add(2);
-		}});
+		Shapes shape1 = ShapeFactory.createShape(ShapeType.RECTANGLE, new Point(1, 1), Arrays.asList(4, 2));
 		screen.addShape(shape1);
 
-		Shapes shape2 = ShapeFactory.createShape(ShapeType.SQUARE, new Point(2, 1), new ArrayList<Integer>(){{
-			add(2);
-		}});
+		Shapes shape2 = ShapeFactory.createShape(ShapeType.SQUARE, new Point(2, 1), Arrays.asList(2));
 		screen.addShape(shape2);
 
-		Shapes shape3 = ShapeFactory.createShape(ShapeType.CIRCLE, new Point(0, 0), new ArrayList<Integer>(){{
-			add(4);
-		}});
+		Shapes shape3 = ShapeFactory.createShape(ShapeType.CIRCLE, new Point(0, 0), Arrays.asList(4));
 		screen.addShape(shape3);
 
 		List<Shapes> sortedShapeByTimestamp = screen.sortByTimestamp();
-		assertEquals(sortedShapeByTimestamp, new ArrayList<Shapes>(){{
-			add(shape1);
-			add(shape2);
-			add(shape3);
-		}});
+		assertEquals(sortedShapeByTimestamp, Arrays.asList(shape1, shape2, shape3));
 	}
 
 	@Test(expected = AssertionError.class)
