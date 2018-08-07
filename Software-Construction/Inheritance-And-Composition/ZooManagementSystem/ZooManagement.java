@@ -2,6 +2,10 @@ package ZooManagementSystem;
 
 import java.util.Scanner;
 
+/**
+ * @author Niraj Gupta
+ * Main Class to check the functionality of the Animal class, zones class and other classes.
+ */
 public class ZooManagement{
 	public static void main(String[] args){
 		Zoo zoo = new Zoo(); 
