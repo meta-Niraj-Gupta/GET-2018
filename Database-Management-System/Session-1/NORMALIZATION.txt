@@ -1,0 +1,26 @@
+NORMALIZATION
+
+Functional Dependency (FD)
+FD depicts relationship between attributes.
+It is expressed as A -> B or A determines B.
+Trivial FD: X -> Y & Y is a subset of X.
+Non Trivial FD: X -> Y & Y is not a subset of X.
+
+Normalization
+It is a process if organizing the data to reduce data redundancy and improve data integrity.
+It ensures optimum structure.
+It ensures atomic data.
+It eliminates data inconsistencies & anomalies (update, insert & delete).
+
+First Normal Form (1NF)
+A relation is in 1NF if there are no repeating groups at the intersection of each row & column that means values at the intersection of each row and column is atomic.
+
+Second Normal Form (2NF)
+To be in second normal form, a relation must be in 1NF and relation must not contain any partial dependency.
+If proper subset of candidate key determines non-prime attribute, it is called partial dependency.
+
+Third Normal Form (3NF)
+A relation is in third normal form, if there is no transitive dependency for non-prime attributes is it is in second normal form.
+A relation is in 3NF if at least one of the following condition holds in every non-trivial function dependency X –> Y
+X is a super key.
+Y is a prime attribute (each element of Y is part of some candidate key).
