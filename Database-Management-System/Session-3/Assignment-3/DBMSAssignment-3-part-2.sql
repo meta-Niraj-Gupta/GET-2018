@@ -1,3 +1,7 @@
+/*
+Display the list of products (Id, Title, Count of Categories) which fall in more than one Categories.
+*/
+
 SELECT 
     product.product_id, product_name
 FROM
@@ -11,7 +15,16 @@ FROM
 WHERE
     pcc.categoryCount > 1;
     
-    
+
+/*
+Display Count of products as per below price range:
+
+Range in Rs.    Count
+0 - 100
+101 - 500
+Above 500
+*/
+
 SELECT 
     '0 - 1000' AS 'Range in Rs',
     COUNT(product_id) AS productCount
@@ -36,7 +49,11 @@ FROM
 WHERE
     price > 20000;
     
-    
+
+/*
+Display the Categories along with number of products under each category.
+*/
+
 SELECT 
     category_name, COUNT(product_id)
 FROM
