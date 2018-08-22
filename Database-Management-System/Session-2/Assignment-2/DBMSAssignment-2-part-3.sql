@@ -31,16 +31,16 @@ Display all the Orders which are placed more than 10 days old and one or more it
 */
 
 SELECT 
-    order_id, DATE(date)
+    order_id
 FROM
     product_order
 WHERE
     order_id IN (SELECT 
-        detail_id
+        order_id
     FROM
         order_detail
     WHERE
-        status = 'shipped') AND DATEDIFF(Now(), date) > 10;
+        status <> 'shipped') AND DATEDIFF(Now(), date) > 10;
 
 /*
 Display list of shoppers which haven't ordered anything since last month.
