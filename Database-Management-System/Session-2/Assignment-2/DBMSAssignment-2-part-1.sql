@@ -127,7 +127,7 @@ command to remove Product table of the StoreFront database.
 */
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE Product;
-
+SET FOREIGN_KEY_CHECKS = 1;
 /*
 Creating product table again
 */
