@@ -47,23 +47,16 @@ Display list of shoppers which haven't ordered anything since last month.
 */
 
 SELECT 
-    user_id, name
+    user.user_id, name
 FROM
     user
 WHERE
     user_id NOT IN (SELECT 
-        user.user_id
+        user_id
     FROM
-        user
-            JOIN
-        address ON user.user_id = address.address_id
+        product_order
     WHERE
-        address.address_id IN (SELECT 
-            order_id
-        FROM
-            product_order
-        WHERE
-            DATEDIFF(Now(), date) < 30));
+        DATEDIFF(Now(), product_order.date) > 30) AND user.type = 'S';
 
 /*need attention
 Display list of shopper along with orders placed by them in last 15 days. 
