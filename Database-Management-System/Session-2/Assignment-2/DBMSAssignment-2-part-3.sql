@@ -92,7 +92,7 @@ Display list of order items along with order placed date which fall between Rs 2
 */
 
 SELECT 
-    Item.order_id
+     DISTINCT(Item.order_id), po.date
 FROM
     order_detail Item
         JOIN
@@ -100,11 +100,11 @@ FROM
 WHERE
     Item.price BETWEEN 100 AND 5000;
 
-
 /*
 Update first 20 Order items status to “Shipped” which are placed today
 */
 
-UPDATE product_order_detail 
+UPDATE order_detail 
 SET status = 'SHIPPED'
-WHERE order_id IN (SELECT order_id FROM product_order WHERE DATE(order_date) = CURDATE());
+WHERE order_id IN (SELECT DISTINCT(order_id) FROM product_order WHERE DATE(date) = CURDATE())
+LIMIT 20;
