@@ -116,10 +116,13 @@ SELECT
     b.category_name As Parent
 FROM
     category a
-        LEFT JOIN
+        left join
     category b ON a.parent_category = b.category_id
 WHERE
-    a.parent_category != 0;
+    a.category_id NOT IN (SELECT 
+        parent_category
+    FROM
+        category);
     
 /*
 Display Product Title, Price & Description which falls 
