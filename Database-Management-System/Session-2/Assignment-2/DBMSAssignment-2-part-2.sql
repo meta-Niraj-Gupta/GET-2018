@@ -96,14 +96,14 @@ then Parent Category Title column should display “Top Category” as value.)
 */
 
 SELECT 
-    a.category_id AS ID,
-    a.category_name AS 'Parent Category',
-    b.category_name AS 'Category Title'
+     a.category_id AS ID,
+     IF(a.parent_category = 0, 'Top Category', b.category_name) AS Parent_Category,
+     a.category_name AS Category_Title
 FROM
     category a
-        INNER JOIN
-    category b ON a.category_id = b.parent_category
-ORDER BY a.category_name,b.category_name;
+        LEFT JOIN
+    category b ON a.parent_category = b.category_id
+ORDER BY Parent_Category, Category_Title;
 
 /*
 Display Id, Title, Parent Category Title of all the leaf Categories 
