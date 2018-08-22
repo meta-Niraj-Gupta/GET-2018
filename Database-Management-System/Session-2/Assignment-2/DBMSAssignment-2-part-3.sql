@@ -80,10 +80,10 @@ Order BY userId;
 Display list of order items which are in “shipped” state for particular Order Id (i.e.: 1020))
 */
 
-SELECT 
-    order_id
+SELECT
+   detail_id, product_name
 FROM
-    order_detail
+    order_detail JOIN product ON product.product_id = order_detail.product_id
 WHERE
     order_id = 1 AND status = 'shipped';
 
