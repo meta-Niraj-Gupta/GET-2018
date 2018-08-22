@@ -17,17 +17,13 @@ Display 10 most expensive Orders.
 */
 
 SELECT 
-    T.id, T.OrderDate, T.OrderTotal
+    PO.order_id as Id, SUM(OT.price) as OrderTotal
 FROM
-    (SELECT 
-        PO.order_id as Id,
-            DATE(PO.date) as OrderDate,
-            SUM(OT.price) as OrderTotal
-    FROM
-        product_order PO
-    JOIN order_detail OT ON PO.order_id = OT.order_id
-    GROUP BY OT.order_id) T
-ORDER BY T.OrderTotal DESC
+    product_order PO
+        JOIN
+    order_detail OT ON PO.order_id = OT.order_id
+GROUP BY Id
+ORDER BY OrderTotal DESC
 LIMIT 10;
 
 /*
