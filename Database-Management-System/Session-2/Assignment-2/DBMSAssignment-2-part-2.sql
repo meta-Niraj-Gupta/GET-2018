@@ -85,8 +85,8 @@ FROM
     product p
 WHERE
     p.product_id NOT IN (SELECT 
-        product_id
-    from
+        DISTINCT(product_id)
+    FROM
         product_image);
         
 /*
