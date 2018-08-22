@@ -121,7 +121,7 @@ FROM
 WHERE
     a.parent_category != 0;
     
-/*need attention
+/*
 Display Product Title, Price & Description which falls 
 into particular category Title (i.e. “Mobile”) 
 */
@@ -132,12 +132,12 @@ SELECT
     product.description
 FROM
     product
-        LEFT JOIN
-    category ON Product.Product_id = category.category_id
-        LEFT JOIN
-    product_category_relation ON product_category_relation.Category_id = product_category_relation.Category_id
+        JOIN
+    product_category_relation ON product.product_id = product_category_relation.product_id
+        JOIN
+    category ON category.category_id = product_category_relation.category_id
 WHERE
-    Category.Category_name = 'MOBILE';
+    category.category_name = 'Mobile';
 
 /*
 Display the list of Products whose Quantity on hand (Inventory) is under 50
