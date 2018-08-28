@@ -1,0 +1,70 @@
+<html>
+
+<head>
+	<title>Login Page</title>
+    <script type = "text/javascript" src = "script/default.js"></script>
+</head>
+
+<body>
+	
+	<table width = "70%" align = "center">
+		<tr>
+			<td> <img src = "image\logo.png" height = "80px" /> </td>
+			<td align = "right"> 
+				| <a href = "index.html">Home</a> | 
+				<a href = "">About</a> |
+				<a href = "">Product</a> | 
+				<a href = "">Gallary</a> |
+				<a href = "contact.html">Contact</a> |
+				<a href = "signup.html">New User ?</a> |
+				<a href = "login.html">Login</a> |
+			</td>
+		</tr>
+	</table>
+	
+	<hr />
+	
+	<br /> <br />
+	
+	<form onsubmit = "return redirect()">
+	
+		<table width = "250px" align = "center">
+			<tr>
+				<td> 
+					Email Id
+				</td>
+				<td> 
+					<input type = "email" onkeyup = "validateEmail()" required> 
+				</td> 
+			</tr>
+			<tr>
+				<td> 
+					Password
+				</td>
+				<td> 
+					<input type = "password" onkeyup = "validatePassword()" required> 
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type = "submit" value = "Login">
+				</td>
+				<td>
+					<a href = "">Forgot Password ?</a>
+				</td>
+			</tr>
+		</table>
+		<h3 align = "center">New User..?? To create new account <a href="signup.html"> Click here </a> </h3>
+		
+	</form>
+	
+	<hr />
+	<footer align = "center">
+		<p>
+			&copy; Copyright 2018 | All Rights Reserved | Metacube Training
+		</p>
+	</footer>
+	
+</body>
+
+</html>
