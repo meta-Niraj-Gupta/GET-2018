@@ -1,0 +1,2 @@
+The constraints has been added while creating the tables during the 2nd assignment of the database management system.
+So please refer to the "DBMSAssignment-2-part-1" where create command of all the table has been written.
