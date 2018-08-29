@@ -120,16 +120,16 @@ function redirectToProfile(){
 }
 
 function changeToTextBox(){
-    var firstName = document.getElementById('firstName').innerHTML = '<input type = "text" id = "firstName" onkeyup = "validateFirstName()" required/>';
-    var lastName = document.getElementById('lastName').innerHTML = '<input type = "text" id = "lastName" onkeyup = "validateLastName()" required/>';
-    var email = document.getElementById('email').innerHTML = '<input type = "email" id = "email" onkeyup = "validateEmail()" required/>';
-    var contactNumber = document.getElementById('contactNumber').innerHTML = '<input type = "tel" id = "contactNumber" onkeyup = "validateContactNumber()" required/>';
-    var company = document.getElementById('company').innerHTML = '<select required>' +
+    var firstName = document.getElementById('profileFirstName').innerHTML = '<input type = "text" id = "firstName" onkeyup = "validateFirstName()" required/>';
+    var lastName = document.getElementById('profileLastName').innerHTML = '<input type = "text" id = "lastName" onkeyup = "validateLastName()" required/>';
+    var email = document.getElementById('profileEmail').innerHTML = '<input type = "email" id = "email" onkeyup = "validateEmail()" required/>';
+    var contactNumber = document.getElementById('profileContactNumber').innerHTML = '<input type = "tel" id = "contactNumber" onkeyup = "validateContactNumber()" required/>';
+    var company = document.getElementById('profileCompany').innerHTML = '<select required>' +
 							                                            '<option> Appcino </option>' +
                                                                         '<option> Infosys </option>' +
                                                                         '<option> Metacube Software </option>' +
                                                                         '<option> Mindtree </option>' +
                                                                         '<option> TCS </option>' +
 						                                          '</select>';
-    var createSubmitButtom = document.getElementById('button').innerHTML = '<input type = "button" value = "Submit" onclick = "return validateForm() && redirectToProfile()">';
+    var createSubmitButtom = document.getElementById('button').innerHTML = '<input type = "button" value = "Submit" onclick = "return redirectToProfile()">';
 }
