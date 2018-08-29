@@ -11,18 +11,24 @@ function validateForm(){
 }
 
 /*
+Helper method to validate firstName and lastName.
+*/
+function validateName(name){
+    if(/^[a-zA-Z]{2,}$/.test(name.value)){
+        name.style.border = "2px solid green";
+        return true;
+    }else{
+        name.style.border = "2px solid red";
+        return false;
+    }
+}
+/*
 Method to validate the firstName by ensuring that it contain atleast 2 character and it must not 
 contain any numeric character
 */
 function validateFirstName(){
     var firstName = document.getElementById('firstName');
-    if(/^[a-zA-Z]{2,}$/.test(firstName.value)){
-        firstName.style.border = "2px solid green";
-        return true;
-    }else{
-        firstName.style.border = "2px solid red";
-        return false;
-    }
+    validateName(firstName);
 }
 
 /*
@@ -31,13 +37,7 @@ contain any numeric character
 */
 function validateLastName(){
    var lastName = document.getElementById('lastName');
-    if(/^[a-zA-Z]{2,}$/.test(lastName.value)){
-        lastName.style.border = "2px solid green";
-        return true;
-    }else{
-        lastName.style.border = "2px solid red";
-        return false;
-    }
+    validateName(lastName);
 }
 
 /*
@@ -59,8 +59,7 @@ Method to validate password should contains Uppercase, Lowercase, Numeric, Alpha
 */
 function validatePassword(){
     var password = document.getElementById('password');
-    if(/[a-z]+/.test(password.value) && /[A-Z]+/.test(password.value) && 
-        /[^a-zA-Z0-9]+/.test(password.value) && /[0-9]+/.test(password.value) &&
+    if(/[a-zA-Z0-9]+/.test(password.value) && /[^a-zA-Z0-9]+/.test(password.value) &&
         password.value.length >= 8){
         password.style.border = "2px solid green";
         return true;
