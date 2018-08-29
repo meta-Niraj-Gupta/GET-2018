@@ -2,6 +2,7 @@
 
 	<head>
 		<title>User Profile</title>
+        <script type = "text/javascript" src = "script/default.js"></script>
 	</head>
 
 	<body>
@@ -42,7 +43,7 @@
 						First Name
 					</td>
 					<td> 
-						<p>Niraj</p> 
+						<p id = "firstName">Niraj</p> 
 					</td> 
 				</tr>
 				<tr>
@@ -50,7 +51,7 @@
 						Last Name
 					</td>
 					<td> 
-						<p>Gupta</p>
+						<p id = "lastName">Gupta</p>
 					</td> 
 				</tr>
 				<tr>
@@ -58,7 +59,7 @@
 						Email
 					</td>
 					<td> 
-						<p>guptaniraj41@gmail.com</p> 
+						<p id = "email">guptaniraj41@gmail.com</p> 
 					</td>
 				</tr>
 				<tr>
@@ -66,21 +67,24 @@
 						Contact Number
 					</td>
 					<td>
-						<p>7062670806</p>
+						<p id = "contactNumber">7062670806</p>
 					</td>
 				</tr>
 				<tr>
 					<td> 
-						Company/Institution
+						Company Name
 					</td>
 					<td> 
-						<p>Metacube Software</p>
+						<p id = "company">Metacube Software</p>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type = "submit" value = "Edit Profile">
+						<input type = "submit" value = "Edit Profile" onclick = "changeToTextBox()">
 					</td>
+                    <td id = "button">
+                        
+                    </td>
 				</tr>
 			</table>
 		

@@ -102,14 +102,34 @@ function validateContactNumber(){
 Method to redirect to the profile page after successful login
 */
 function redirect(){
-  window.location.replace("profile.html");
-  return false;
+    window.location.replace("profile.html");
+    return false;
 }
 
 /*
 Method to redirect to the login page after successful registration
 */
 function redirectToLogin(){
-  window.location.replace("login.html");
-  return false;
+    window.location.replace("login.html");
+    return false;
+}
+
+function redirectToProfile(){
+    window.location.replace("profile.html");
+    return false;
+}
+
+function changeToTextBox(){
+    var firstName = document.getElementById('firstName').innerHTML = '<input type = "text" id = "firstName" onkeyup = "validateFirstName()" required/>';
+    var lastName = document.getElementById('lastName').innerHTML = '<input type = "text" id = "lastName" onkeyup = "validateLastName()" required/>';
+    var email = document.getElementById('email').innerHTML = '<input type = "email" id = "email" onkeyup = "validateEmail()" required/>';
+    var contactNumber = document.getElementById('contactNumber').innerHTML = '<input type = "tel" id = "contactNumber" onkeyup = "validateContactNumber()" required/>';
+    var company = document.getElementById('company').innerHTML = '<select required>' +
+							                                            '<option> Appcino </option>' +
+                                                                        '<option> Infosys </option>' +
+                                                                        '<option> Metacube Software </option>' +
+                                                                        '<option> Mindtree </option>' +
+                                                                        '<option> TCS </option>' +
+						                                          '</select>';
+    var createSubmitButtom = document.getElementById('button').innerHTML = '<input type = "button" value = "Submit" onclick = "return validateForm() && redirectToProfile()">';
 }
