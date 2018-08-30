@@ -1,34 +1,32 @@
 /*
 Method to validate form if all fields in the form are correct than it will submit, otherwise not
 */
+var error;
 function validateForm(){
+    window.error = [];
     if(validateFirstName() && validateLastName() && validateEmail() && 
         validatePassword() && validateConfirmPassword() && validateContactNumber()){
         return true;
     }
-    alert('Invalid Input');
+    alert(error.join("\n"));
+    error = []
     return false;
 }
 
-/*
-Helper method to validate firstName and lastName.
-*/
-function validateName(name){
-    if(/^[a-zA-Z]{2,}$/.test(name.value)){
-        name.style.border = "2px solid green";
-        return true;
-    }else{
-        name.style.border = "2px solid red";
-        return false;
-    }
-}
 /*
 Method to validate the firstName by ensuring that it contain atleast 2 character and it must not 
 contain any numeric character
 */
 function validateFirstName(){
     var firstName = document.getElementById('firstName');
-    validateName(firstName);
+    if(/^[a-zA-Z]{2,}$/.test(firstName.value)){
+        firstName.style.border = "2px solid green";
+        return true;
+    }else{
+        firstName.style.border = "2px solid red";
+        error.push("Invalid First Name");
+        return false;
+    }
 }
 
 /*
@@ -36,8 +34,15 @@ Method to validate the lastName by ensuring that it contain atleast 2 character 
 contain any numeric character
 */
 function validateLastName(){
-   var lastName = document.getElementById('lastName');
-    validateName(lastName);
+    var lastName = document.getElementById('lastName');
+    if(/^[a-zA-Z]{2,}$/.test(lastName.value)){
+        lastName.style.border = "2px solid green";
+        return true;
+    }else{
+        lastName.style.border = "2px solid red";
+        error.push("Invalid Last Name");
+        return false;
+    }
 }
 
 /*
@@ -45,11 +50,12 @@ Method to validate the email should contains @ ., length etc.
 */
 function validateEmail(){
     var email = document.getElementById('email');
-    if(/^([a-z0-9_\-\.]+)@([a-z0-9_\-\.]+)\.([a-z]+)$/.test(email.value)){
+    if(/^([a-zA-Z0-9_\-\.]+)@([a-z0-9_\-\.]+)\.([a-z]+)$/.test(email.value)){
         email.style.border = "2px solid green";
         return true;
     }else{
         email.style.border = "2px solid red";
+        error.push("Invalid Email");
         return false;
     }
 }
@@ -65,6 +71,7 @@ function validatePassword(){
         return true;
     }else{
         password.style.border = "2px solid red";
+        error.push("Invalid Password");
         return false;
     }
 }
@@ -80,6 +87,7 @@ function validateConfirmPassword(){
         return true;
     }else{
         confirmPassword.style.border = "2px solid red";
+        error.push("Password is not matching");
         return false;
     }
 }
@@ -89,11 +97,12 @@ Method to validate contact number Numbers only, length > 8
 */
 function validateContactNumber(){
    var contactNumber = document.getElementById('contactNumber');
-    if(/^[0-9]{9,}$/.test(contactNumber.value)){
+    if(/^[0-9]{10}$/.test(contactNumber.value)){
         contactNumber.style.border = "2px solid green";
         return true;
     }else{
         contactNumber.style.border = "2px solid red";
+        error.push("Invalid Contact Number");
         return false;
     }
 }
