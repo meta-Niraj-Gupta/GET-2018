@@ -1,0 +1,115 @@
+<html>
+
+	<head>
+		<title>Sign Up</title>
+        <script type = "text/javascript" src = "script/default.js" ></script>
+	</head>
+
+	<body>
+		
+		<table width = "70%" align = "center">
+			<tr>
+				<td> 
+					<img src = "image\logo.png" height = "80px" /> 
+				</td> 
+				<td align = "right"> 
+					| <a href = "index.html">Home</a> | 
+					<a href = "">About</a> |
+					<a href = "">Product</a> | 
+					<a href = "">Gallary</a> |
+					<a href = "contact.html">Contact</a> |
+					<a href = "signup.html">New User ?</a> |
+					<a href = "login.html">Login</a> |
+				</td>
+			</tr>
+		</table>
+		
+		<hr />
+		
+		<br /> <br />
+		
+		<form action = "#" id = "signUpForm"  onsubmit = "return validateForm() && redirectToLogin()">
+			<h1 align = "center">Create Your Account </h1>
+			<table width = "250px" align = "center">
+				<tr>
+					<td> 
+						First Name
+					</td>
+					<td> 
+						<input type = "text" id = "firstName" onkeyup = "validateFirstName()" required/> 
+					</td> 
+				</tr>
+				<tr>
+					<td> 
+						Last Name
+					</td>
+					<td> 
+						<input type = "text" id = "lastName" onkeyup = "validateLastName()" required/> 
+					</td> 
+				</tr>
+				<tr>
+					<td> 
+						Email
+					</td>
+					<td> 
+						<input type = "email" id = "email" onkeyup = "validateEmail()" required> 
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						Password
+					</td>
+					<td> 
+				        <input type = "password" id = "password" onkeyup = "validatePassword()" required> 
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						Confirm Password
+					</td>
+					<td> 
+						<input type = "password" id = "confirmPassword" onkeyup = "validateConfirmPassword()" required> 
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						Contact Number
+					</td>
+					<td>
+						<input type = "tel" id = "contactNumber" onkeyup = "validateContactNumber()" required> 
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						Company Name
+					</td>
+					<td> 
+						<select required>
+							<option> Appcino </option>
+							<option> Infosys </option>
+							<option> Metacube Software </option>
+							<option> Mindtree </option>
+							<option> TCS </option>
+						</select> 
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type = "submit" value = "Register">
+					</td>
+				</tr>
+			</table>
+			<h3 align = "center">Already have an account <a href="login.html"> Click here </a> to login</h3>
+			
+		</form>
+		
+		<hr />
+		<footer align = "center">
+			<p>
+				&copy; Copyright 2018 | All Rights Reserved | Metacube Training
+			</p>
+		</footer>
+		
+	</body>
+
+</html>
