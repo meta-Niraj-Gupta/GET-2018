@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Sign Up</title>
+		<style>
+			a {
+				text-decoration: none
+			}
+		</style>
+	</head>
+	<body>
+		<form action="signUp" method="post">
+			<h1 align="center">Create Account</h1>
+			<table align="center" cellspacing = "10px">
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" name="firstName" required /></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" name="lastName" required /></td>
+				</tr>
+				<tr>
+					<td>Date of birth</td>
+					<td><input type="date" name="dateOfBirth" required /></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" name="email" required></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" required></td>
+				</tr>
+				<tr>
+					<td>Mobile Number</td>
+					<td><input type="tel" name="mobileNumber" required></td>
+				</tr>
+				<tr>
+					<td>Company Name</td>
+					<td><select name = "companyName" required>
+							<option>Appcino</option>
+							<option>Infosys</option>
+							<option>Metacube Software</option>
+							<option>Mindtree</option>
+							<option>TCS</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td colspan = "2" align = "center"><input type="submit" value="Register"></td>
+				</tr>
+			</table>
+			<h3 align="center">
+				Already have an account <a href="login.html"> Click here </a> to
+				login
+			</h3>
+		</form>
+	</body>
+</html>
