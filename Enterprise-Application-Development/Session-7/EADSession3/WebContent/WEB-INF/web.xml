@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>EADSession3</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>EmployeeDetail</servlet-name>
+  	<servlet-class>com.servlet.ShowEmployeeServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>EmployeeDetail</servlet-name>
+  	<url-pattern>/showEmployee</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>AddEmployee</servlet-name>
+  	<servlet-class>com.servlet.AddEmployeeServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>AddEmployee</servlet-name>
+  	<url-pattern>/insertEmployee</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>UpdateEmployee</servlet-name>
+  	<servlet-class>com.servlet.UpdateDetailServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>UpdateEmployee</servlet-name>
+  	<url-pattern>/updateDetail</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>UpdateEmployeeInDatabase</servlet-name>
+  	<servlet-class>com.servlet.UpdateEmployeeInDatabase</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>UpdateEmployeeInDatabase</servlet-name>
+  	<url-pattern>/updateDetailInDatabase</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>SearchEmployeeInDatabase</servlet-name>
+  	<servlet-class>com.servlet.SearchEmployeeServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SearchEmployeeInDatabase</servlet-name>
+  	<url-pattern>/searchEmployee</url-pattern>
+  </servlet-mapping>
+</web-app>
