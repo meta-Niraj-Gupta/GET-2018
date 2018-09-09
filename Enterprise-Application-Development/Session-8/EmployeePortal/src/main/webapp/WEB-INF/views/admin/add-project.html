@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Add Project
+    </title>
+</head>
+
+<body>
+    <form th:object="${project}" th:action="@{add-project}" method="POST">
+    	Name <input type="text" name="name" required/><br />
+        Description <textarea name="description"></textarea><br />
+        Start Date <input name="startDate" type="date" required /><br />
+        End Date <input name="endDate" type="date" /><br />
+        Project logo <input type="text" name="projectLogo" required/><br />
+        <input name="submit" type="submit" value="submit" required />
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DashBoard</title>
+</head>
+<body>
+	<h1 th:inline="text">Hello [[${email}]]</h1>
+	<ul>
+		<li><a th:href="@{/admin/add-project}">Add Project</a></li>
+		<li><a th:href="@{/admin/add-skill}">Add Skills</a></li>
+		<li><a th:href="@{/admin/add-job-title}">Add Job</a></li>
+		<li><a th:href="@{/admin/add-employee}">Add Employee</a></li>
+		<li><a th:href="@{/admin/search-employee}">Search Employee</a></li>
+		<li><a th:href="@{/admin/logout}">Logout</a></li>
+	</ul>
+</body>
+</html>

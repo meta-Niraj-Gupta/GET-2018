@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Add Employee
+    </title>
+</head>
+
+<body>
+    <form action="" method="POST">
+        First Name <input name="first-name" type="text" required /><br />
+        Middle Name <input name="middle-name" type="text" required /><br />
+        Last Name <input name="last-name" type="text" required /><br />
+        DOB <input name="dob" type="date" required /><br />
+        GENDER <input name="gender" type="radio" value="male" />Male <input name="gender" type="radio" value="female" />Female<br />
+        Primary Contact number <input type="number" name="primary-contact" required /><br />
+        Secondary Contact number <input type="number" name="secondary-contact" required /><br />
+        Email <input name="email" type="email" required /><br />
+        Skype <input name="skype" type="text" required /><br />
+        Password <input name="password" type="password" required /><br />
+        Profile Picture <input name="profile-picture" type="file" accept="image/*" required /><br />
+        Skills <select name="skill-set" multiple>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+        </select><br />
+        
+        <h2>Address</h2>
+        Address Line 1 <input name="line-1" type="text" required /><br />
+        Address Line 2 <input name="line-2" type="text" required /><br />
+        City <select name="city" multiple>
+            <option value="jp">Jaipur</option>
+            <option value="ali">Aligarh</option>
+        </select><br />
+        State <select name="state">
+            <option value="raj">Rajasthan</option>
+            <option value="up">Uttar Pradesh</option>
+        </select><br />
+        PIN <input type="number" name="pincode" required /><br />
+        
+        <h2>Job Detail</h2>
+        DOJ <input name="doj" type="date" required /><br />
+        Job Title <select name="job-title">
+            <option value="swe">SWE</option>
+            <option value="ad">AD</option>
+        </select><br />
+        Reporting Manager <select name="job-title">
+            <option value="swe">SWE</option>
+            <option value="ad">AD</option>
+        </select><br />
+        
+        <input name="submit" type="submit" value="submit" required />
+    </form>
+</body>
+
+</html>
