@@ -1,6 +1,5 @@
 package com.metacube.training.EmployeePortal.config;
 
-
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,26 +17,25 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
-
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.metacube.training.EmployeePortal")
 @PropertySource("classpath:database.properties")
 public class MvcWebConfig implements WebMvcConfigurer {
-	
+
 	@Autowired
 	Environment environment;
-	
-	@Autowired
-	private ApplicationContext applicationContext;
-	
+
 	private final String URL = "url";
 	private final String USER = "dbuser";
 	private final String DRIVER = "driver";
 	private final String PASSWORD = "dbpassword";
 
+	@Autowired
+	private ApplicationContext applicationContext;
+
 	/*
-	 * STEP 1 - Create SpringResourceTemplateResolver
+	 * Creating SpringResourceTemplateResolver
 	 */
 	@Bean
 	public SpringResourceTemplateResolver templateResolver() {
@@ -50,7 +48,7 @@ public class MvcWebConfig implements WebMvcConfigurer {
 	}
 
 	/*
-	 * STEP 2 - Create SpringTemplateEngine
+	 * Creating SpringTemplateEngine
 	 */
 	@Bean
 	public SpringTemplateEngine templateEngine() {
@@ -61,7 +59,7 @@ public class MvcWebConfig implements WebMvcConfigurer {
 	}
 
 	/*
-	 * STEP 3 - Register ThymeleafViewResolver
+	 * Registering ThymeleafViewResolver
 	 */
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
@@ -69,16 +67,16 @@ public class MvcWebConfig implements WebMvcConfigurer {
 		resolver.setTemplateEngine(templateEngine());
 		registry.viewResolver(resolver);
 	}
-	
+
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
 		driverManagerDataSource.setUrl(environment.getProperty(URL));
 		driverManagerDataSource.setUsername(environment.getProperty(USER));
 		driverManagerDataSource.setPassword(environment.getProperty(PASSWORD));
-		driverManagerDataSource.setDriverClassName(environment.getProperty(DRIVER));
+		driverManagerDataSource.setDriverClassName(environment
+				.getProperty(DRIVER));
 		return driverManagerDataSource;
 	}
-	
 
 }

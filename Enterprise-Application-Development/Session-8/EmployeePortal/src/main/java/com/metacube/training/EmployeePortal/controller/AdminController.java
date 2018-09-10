@@ -1,6 +1,6 @@
 package com.metacube.training.EmployeePortal.controller;
 
-import java.sql.SQLException;
+import javax.jws.WebParam.Mode;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,16 +12,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.metacube.training.EmployeePortal.dao.ProjectDAO;
+import com.metacube.training.EmployeePortal.model.Job;
 import com.metacube.training.EmployeePortal.model.Project;
+import com.metacube.training.EmployeePortal.model.Skill;
+import com.metacube.training.EmployeePortal.service.JobService;
+import com.metacube.training.EmployeePortal.service.ProjectService;
+import com.metacube.training.EmployeePortal.service.SkillService;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 
 	@Autowired
-	private ProjectDAO projectService;
-	
+	private ProjectService projectService;
+	@Autowired
+	private SkillService skillService;
+	@Autowired
+	private JobService jobService;
+
 	@GetMapping("/login")
 	public String login() {
 		return "admin/login";
@@ -30,41 +38,113 @@ public class AdminController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam(name = "username") String username,
 			@RequestParam(name = "password") String password) {
-
-		return new ModelAndView("admin/dashboard", "username", username);
+		if ("admin".equals(username) && "admin".equals(password)) {
+			return new ModelAndView("admin/dashboard", "username", username);
+		} else {
+			return new ModelAndView();
+		}
 	}
 
-	@RequestMapping(path = "/projects/add", method = RequestMethod.GET)
-	public String createproject(Model model) {
+	@GetMapping("/projects/add")
+	public String createProject(Model model) {
 		model.addAttribute("project", new Project());
 		return "admin/editProject";
 	}
 
 	@RequestMapping(path = "projects", method = RequestMethod.POST)
-	public String saveproject(@ModelAttribute("project") Project project) throws SQLException {
-		if(project!= null && project.getId() == 0) {
-			projectService.createProject(project);	
-		}else {
+	public String saveProject(@ModelAttribute("project") Project project) {
+		if (project != null && project.getId() == null) {
+			projectService.createProject(project);
+		} else {
 			projectService.updateProject(project);
 		}
 		return "redirect:/admin/projects";
 	}
 
 	@RequestMapping(path = "/projects", method = RequestMethod.GET)
-	public String getAllprojects(Model model) throws SQLException {
+	public String getAllprojects(Model model) {
 		model.addAttribute("projects", projectService.getAllProjects());
 		return "admin/projects";
 	}
 
 	@RequestMapping(path = "/projects/edit", method = RequestMethod.GET)
-	public String editproject(Model model, @RequestParam("id") int id) throws SQLException {
+	public String editproject(Model model, @RequestParam("id") Integer id) {
 		model.addAttribute("project", projectService.getProjectById(id));
 		return "admin/editProject";
 	}
-	
+
 	@RequestMapping(path = "/projects/delete", method = RequestMethod.GET)
-	public String deleteproject(@RequestParam("id") int id) throws SQLException {
+	public String deleteproject(@RequestParam("id") Integer id) {
 		projectService.deleteProject(id);
 		return "redirect:/admin/projects";
 	}
+
+	@GetMapping("/skill/add")
+	public String createSkill(Model model) {
+		model.addAttribute("skill", new Skill());
+		return "admin/editSkill";
+	}
+
+	@RequestMapping(path = "skill", method = RequestMethod.POST)
+	public String saveSkill(@ModelAttribute("skill") Skill skill) {
+		if (skill != null && skill.getSkillId() == null) {
+			skillService.createSkill(skill);
+		} else {
+			skillService.updateSkill(skill);
+		}
+		return "redirect:/admin/skill";
+	}
+
+	@RequestMapping(path = "/skill", method = RequestMethod.GET)
+	public String getAllSkills(Model model) {
+		model.addAttribute("skills", skillService.getAllSkills());
+		return "admin/skill";
+	}
+
+	@RequestMapping(path = "/skill/edit", method = RequestMethod.GET)
+	public String editSkill(Model model, @RequestParam("id") Integer id) {
+		model.addAttribute("skill", skillService.getSkillById(id));
+		return "admin/editSkill";
+	}
+
+	@RequestMapping(path = "/skill/delete", method = RequestMethod.GET)
+	public String deleteSkill(@RequestParam("id") Integer id) {
+		skillService.deleteSkill(id);
+		return "redirect:/admin/skill";
+	}
+
+	@GetMapping("/job/add")
+	public String createJob(Model model) {
+		model.addAttribute("job", new Job());
+		return "admin/editJob";
+	}
+
+	@RequestMapping(path = "job", method = RequestMethod.POST)
+	public String saveJob(@ModelAttribute("job") Job job) {
+		if (job != null && job.getJobCode() == null) {
+			jobService.createJob(job);
+		} else {
+			jobService.updateJob(job);
+		}
+		return "redirect:/admin/job";
+	}
+
+	@RequestMapping(path = "/job", method = RequestMethod.GET)
+	public String getAllJobs(Model model) {
+		model.addAttribute("jobs", jobService.getAllJobs());
+		return "admin/job";
+	}
+
+	@RequestMapping(path = "/job/edit", method = RequestMethod.GET)
+	public String editJob(Model model, @RequestParam("id") Integer id) {
+		model.addAttribute("job", jobService.getJobById(id));
+		return "admin/editJob";
+	}
+
+	@RequestMapping(path = "/job/delete", method = RequestMethod.GET)
+	public String deleteJob(@RequestParam("id") Integer id) {
+		jobService.deleteJob(id);
+		return "redirect:/admin/job";
+	}
+
 }

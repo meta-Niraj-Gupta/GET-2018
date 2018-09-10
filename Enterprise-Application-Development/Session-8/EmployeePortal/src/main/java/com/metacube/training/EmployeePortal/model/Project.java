@@ -1,41 +1,24 @@
 package com.metacube.training.EmployeePortal.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Project {
-	private int id;
-	private String name;
+
+	private Integer id;
 	private String description;
-	@DateTimeFormat(pattern= "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
-	@DateTimeFormat(pattern= "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
-	private String projectLogo;
 
-	public String getProjectLogo() {
-		return projectLogo;
-	}
-
-	public void setProjectLogo(String projectLogo) {
-		this.projectLogo = projectLogo;
-	}
-
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getDescription() {
@@ -61,4 +44,11 @@ public class Project {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+
+	@Override
+	public String toString() {
+		return "Project [id=" + id + ", description=" + description
+				+ ", startDate=" + startDate + ", endDate=" + endDate + "]";
+	}
+
 }
