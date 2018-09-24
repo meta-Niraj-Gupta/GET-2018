@@ -16,12 +16,13 @@ public class SpringSecurity extends WebSecurityConfigurerAdapter {
 	
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/admin/login").permitAll()
+				.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+				.antMatchers("/employee/login").permitAll()
+				.antMatchers("/employee/**").access("hasRole('ROLE_USER')")
 				.anyRequest().authenticated().and().formLogin()
-				.loginPage("/admin/login")
-				.defaultSuccessUrl("/admin/dashboard")
-				.failureUrl("/admin/login?error").and().logout()
-				.logoutSuccessUrl("/admin/login").deleteCookies("JSESSIONID")
-				.invalidateHttpSession(true);
+				.loginPage("/login").defaultSuccessUrl("/admin/dashboard")
+				.failureUrl("/login?error").and().logout()
+				.logoutSuccessUrl("/login?logout");
 		http.csrf().disable();
 	}
 }
