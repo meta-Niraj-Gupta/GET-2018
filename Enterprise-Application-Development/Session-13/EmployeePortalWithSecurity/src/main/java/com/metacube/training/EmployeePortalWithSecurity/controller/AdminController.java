@@ -49,12 +49,22 @@ public class AdminController {
 	@Autowired
 	private EmployeeSkillsService employeeSkillsService;
 	@Autowired
-    private MailService emailService;
-	
-	@GetMapping("/login")
-	public String login() {
-		return "/login";
-	}
+	private MailService emailService;
+
+//	@GetMapping("/login")
+//	public String login() {
+//		return "/login";
+//	}
+//
+//	@RequestMapping(value = "/login", method = RequestMethod.POST)
+//	public ModelAndView login(@RequestParam(name = "username") String username,
+//			@RequestParam(name = "password") String password) {
+//		if ("admin".equals(username) && "admin".equals(password)) {
+//			return new ModelAndView("admin/dashboard", "username", username);
+//		} else {
+//			return new ModelAndView("redirect:login?error");
+//		}
+//	}
 
 	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 	public ModelAndView dashboard() {
@@ -198,14 +208,15 @@ public class AdminController {
 			employeeSkills.setSkillCode(skillCode);
 			employeeSkillsService.createEmployeeSkills(employeeSkills);
 		}
-		
-		Mail mail = new Mail();
-        mail.setFrom("niraj.gupta@metacube.com");
-        mail.setTo(employee.getEmailId());
-        mail.setSubject("Welcome to Employee Portal. Your credentials are as follows");
-        mail.setContent("\n\nUsername:\t" + employee.getEmailId() + "\nPassword:\t" + employee.getPassword());
 
-        emailService.sendSimpleMessage(mail);
+		Mail mail = new Mail();
+		mail.setFrom("niraj.gupta@metacube.com");
+		mail.setTo(employee.getEmailId());
+		mail.setSubject("Welcome to Employee Portal. Your credentials are as follows");
+		mail.setContent("\n\nUsername:\t" + employee.getEmailId()
+				+ "\nPassword:\t" + employee.getPassword());
+
+		emailService.sendSimpleMessage(mail);
 		return "redirect:/admin/employee";
 	}
 

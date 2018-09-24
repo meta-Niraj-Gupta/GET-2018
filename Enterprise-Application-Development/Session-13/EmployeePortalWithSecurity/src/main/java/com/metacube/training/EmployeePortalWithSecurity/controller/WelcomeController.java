@@ -37,7 +37,13 @@ public class WelcomeController {
 		model.addAttribute("greeting", "Hello World from Spring 4 MVC");
 		return "welcome";
 	}
-
+	
+	@GetMapping("/login")
+	public String login(ModelMap model) {
+		model.addAttribute("greeting", "Hello World from Spring 4 MVC");
+		return "login";
+	}
+	
 	@GetMapping("/search")
 	public String search(ModelMap model) {
 		model.addAttribute("greeting", "Hello World from Spring 4 MVC");
