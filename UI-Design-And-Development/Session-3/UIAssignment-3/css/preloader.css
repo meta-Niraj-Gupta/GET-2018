@@ -1,0 +1,44 @@
+.square {
+    height: 300px;
+    width: 300px;
+    background-color: #fff;
+    position: absolute;
+}
+
+.square-item {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    top: 0px;
+    left: 0px;
+}
+
+.square-1 {
+    background-color: red;
+    animation: square-movement 4s normal 0s infinite;
+}
+
+.square-2 {
+    background-color: blue;
+    animation: square-movement 4s normal -1s infinite;
+    
+}
+
+.square-3 {
+    background-color: green;
+    animation: square-movement 4s normal -2s infinite;
+}
+
+.square-4 {
+    background-color: black;
+    animation: square-movement 4s normal -3s infinite;
+}
+
+@keyframes square-movement {
+  25% { left: 0; top: 100%; transform: translate(0%, -100%); }
+  50% { left: 100%; top: 100%; transform: translate(-100%, -100%); }
+  75% { left: 100%; top: 0; transform: translate(-100%, 0%); }
+  100% { left: 0; top: 0; transform: translate(-0%, 0%); }
+}
+
+
