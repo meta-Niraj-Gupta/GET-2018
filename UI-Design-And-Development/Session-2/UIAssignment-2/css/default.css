@@ -109,8 +109,18 @@ nav a {
     margin-left: -2px;
 }
 
+.download-button:hover {
+    background-color: black;
+    transition-duration: 1s;
+}
+
 .download-button {
     background-color: #d9534f;
+}
+
+.features-button:hover {
+    background-color: chartreuse;
+    transition-duration: 1s;
 }
 
 .features-button {
@@ -201,15 +211,27 @@ nav a {
     transform: rotate3d(0, 1, 0, 20deg)
 }
 
+.drag-image-1:hover {
+    z-index: 6;
+}
+
 .drag-image-2 {
     z-index: 2;
     max-width: 250px;
     transform: rotate3d(0, 1, 0, 20deg)
 }
 
+.drag-image-2:hover {
+    z-index: 6;
+}
+
 .drag-image-3 {
     z-index: 3;
     max-width: 300px;
+}
+
+.drag-image-3:hover {
+    z-index: 6;
 }
 
 .drag-image-4 {
@@ -218,12 +240,19 @@ nav a {
     transform: rotate3d(0, 1, 0, -20deg)
 }
 
+.drag-image-4:hover {
+    z-index: 6;
+}
+
 .drag-image-5 {
     z-index: 1;
     max-width: 200px;
     transform: rotate3d(0, 1, 0, -20deg)
 }
 
+.drag-image-5:hover {
+    z-index: 6;
+}
 /* Screenshot Section */
 
 .screenshot {
@@ -335,6 +364,20 @@ nav a {
 
 .circle {
     border-radius: 50% 50%;
+}
+
+#sun {
+    background-color: #fcec64;
+    height: 100px;
+    width: 100px;
+    border-radius: 50% 50%;
+    transition-duration: 3s;
+}
+
+#sun:hover {
+    background-color: orange;
+    transition-duration: 5s;
+    transform: scale(1.2);
 }
 
 .attr {
