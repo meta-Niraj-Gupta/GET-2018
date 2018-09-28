@@ -430,7 +430,7 @@ nav a {
     color: #648cff;
     height: 55px;
     margin-bottom: 20px;
-    transform: rotate(-180deg);
+    transform: rotate(-180deg) translateX(60px);
     align-self: flex-end;
 }
 
