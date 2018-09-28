@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px solid black;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-family: sans-serif;
+}
+
+input:focus:invalid,
+select:focus:invalid {
+    border: 1px solid red !important;
+}
+
+input:focus:valid,
+select:focus:valid {
+    border: 1px solid green !important;
+}
+
+.icon {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #EDEDED;
+    min-width: 50px;
+    text-align: center;
+    border: 1px solid gainsboro;
+}
+
+body {
+    margin-top: 20px;
+    margin-left: 40px;
+    background-color: #EDEDED;
+    height: auto;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#container {
+    padding-bottom: 20px;
+}
+
+label {
+    width: 220px;
+    text-align: right;
+    padding-top: 5px;
+    margin-right: 20px;
+}
+
+input[type="radio"] {
+    margin-top: 10px;
+    padding-left: 130px;
+}
+
+input:not([type='radio']) {
+    padding-left: 15px;
+    width: 220px;
+    border-radius: 3px;
+}
+
+textarea {
+    padding-left: 15px;
+    padding-top: 3px;
+    border-radius: 3px;
+}
+
+select {
+    width: 220px;
+    background: linear-gradient(to bottom, #f2edea .1%, #c0bebf 60%);
+    \
+}
+
+button {
+    margin-left: 240px;
+    font-size: 15px;
+    background: linear-gradient(to bottom, #F1B46A 0%, #F1B46A);
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: white
+}
+
+button i {
+    margin-left: 3px;
+    font-size: 12px;
+}
