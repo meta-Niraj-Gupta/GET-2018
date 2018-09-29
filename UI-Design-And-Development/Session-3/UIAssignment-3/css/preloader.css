@@ -3,6 +3,7 @@
     width: 300px;
     background-color: #fff;
     position: absolute;
+    z-index: 100;
 }
 
 .square-item {
@@ -10,28 +11,32 @@
     height: 150px;
     width: 150px;
     top: 0px;
-    left: 0px;
+    left: 0px; 
 }
 
 .square-1 {
-    background-color: red;
-    animation: square-movement 4s normal 0s infinite;
+    background-color: #7a45e5;
+    animation: square-movement 2s normal 0s infinite;
+    z-index: 1;
+
 }
 
 .square-2 {
-    background-color: blue;
-    animation: square-movement 4s normal -1s infinite;
-    
+    background-color: #fa5667;
+    animation: square-movement 2s normal -0.5s infinite;
+    z-index: 2;
 }
 
 .square-3 {
-    background-color: green;
-    animation: square-movement 4s normal -2s infinite;
+    background-color: #fac24c;
+    animation: square-movement 2s normal -1s infinite;
+    z-index: 1;
 }
 
 .square-4 {
-    background-color: black;
-    animation: square-movement 4s normal -3s infinite;
+    background-color: #1b91f7;
+    animation: square-movement 2s normal -1.5s infinite;
+    z-index: 2;
 }
 
 @keyframes square-movement {
@@ -40,5 +45,3 @@
   75% { left: 100%; top: 0; transform: translate(-100%, 0%); }
   100% { left: 0; top: 0; transform: translate(-0%, 0%); }
 }
-
-
