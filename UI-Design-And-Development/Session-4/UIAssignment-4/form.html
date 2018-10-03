@@ -16,13 +16,13 @@
             <div class="input-container">
                 <label>First Name</label>
                 <i class="fas fa-user icon"></i>
-                <input class="input-field" type="text" placeholder="First Name" name="usrnm" required>
+                <input class="input-field" type="text" placeholder="First Name" name="usrnm" pattern="[A-Za-z]{2,50}" required>
             </div>
 
             <div class="input-container">
                 <label>Last Name</label>
                 <i class="fas fa-user icon"></i>
-                <input class="input-field" type="text" placeholder="Last Name" name="usrnm" required>
+                <input class="input-field" type="text" placeholder="Last Name" name="usrnm" pattern="[A-Za-z]{2,50}" required>
             </div>
 
             <div class="input-container">
@@ -34,19 +34,19 @@
             <div class="input-container">
                 <label>Phone #</label>
                 <i class="fas fa-phone icon"></i>
-                <input class="input-field" type="tel" placeholder="(845)555-1212" name="usrnm" required>
+                <input class="input-field" type="tel" placeholder="(845)555-1212" name="usrnm" pattern="[0-9]{10}" required>
             </div>
 
             <div class="input-container">
                 <label>Address</label>
                 <i class="fas fa-home icon"></i>
-                <input type="text" placeholder="Address" name="Address" required>
+                <input type="text" placeholder="Address" name="Address" pattern="[A-Za-z0-9\s]{2,500}" required>
             </div>
 
             <div class="input-container">
                 <label>City</label>
                 <i class="fas fa-home icon"></i>
-                <input type="text" placeholder="City" name="city" required>
+                <input type="text" placeholder="City" name="city" pattern="[A-Za-z\s]{2,30}" required>
             </div>
 
 
@@ -65,7 +65,7 @@
             <div class="input-container">
                 <label>Zip-Code</label>
                 <i class="fas fa-home icon"></i>
-                <input type="number" placeholder="Zip Code" name="ZipCode" required>
+                <input type="text" placeholder="Zip Code" name="ZipCode" pattern="[0-9]{6}" required>
             </div>
 
             <div class="input-container">

@@ -5,6 +5,7 @@
     box-sizing: border-box;
     max-width: 100%;
     font-family: sans-serif;
+    outline: none;
 }
 
 input:focus:invalid,
