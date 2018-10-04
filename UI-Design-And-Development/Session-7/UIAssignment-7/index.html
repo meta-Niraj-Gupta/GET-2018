@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="javascript/script.js" type="text/javascript"></script>
+    <style>
+        legend {
+            border-bottom: none;
+        }
+        
+        .well {
+            border: none;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <form class="well form-horizontal" action=" " method="post" id="contact_form" onsubmit="return validateForm() && redirectToProfile()">
+            <fieldset class="fieldset">
+
+                <!-- Form Name -->
+                <legend>Contact Us Today!</legend>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="firstname" placeholder="First Name" class="form-control" type="text" onblur="validateFirstName()"/>
+                        </div>
+                        <p id="firstNameErrorField"></p>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="lastname" placeholder="Last Name" class="form-control" type="text" onblur="validateLastName()"/>
+                        </div>
+                        <p id="lastNameErrorField"></p>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input id="email" placeholder="E-Mail Address" class="form-control" type="email" onblur="validateEmail()"/>
+                        </div>
+                        <p id="emailErrorField"></p>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Phone #</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="phone" placeholder="(845)555-1212" class="form-control" type="tel" onblur="validatePhoneNumber()">
+                        </div>
+                        <p id="phoneErrorField"></p>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Address</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input id="address" placeholder="Address" class="form-control" type="text" onblur="validateAddress()">
+                        </div>
+                        <p id="addressErrorField"></p>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">City</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input id="city" placeholder="city" class="form-control" type="text" onblur="validateCityName()">
+                        </div>
+                        <p id="cityErrorField"></p>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">State</label>
+                    <div class="col-md-4 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select id="state" class="form-control selectpicker" onchange="validateState()">
+                                <option value="none" disabled selected>Please select your state</option>
+                                <option value="haryana">Haryana</option>
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="rajasthan">Rajasthan</option>
+                            </select>
+                        </div>
+                        <p id="stateErrorField"></p>
+                    </div>
+                </div>
+
+                <!-- Button -->
+
+                <div class="form-group" id="last">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
