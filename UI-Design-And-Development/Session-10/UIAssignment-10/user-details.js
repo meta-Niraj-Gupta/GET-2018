@@ -41,9 +41,9 @@ function userDetailController($scope, $http) {
         $scope.users.forEach(element => {
             if (key === element.id) {
                 $scope.id = element.id;
-                $scope.editedName = element.name;
-                $scope.editedPhone = element.phone;
-                $scope.editedCity = element.city;
+                $scope.userName = element.name;
+                $scope.userPhone = element.phone;
+                $scope.userCity = element.city;
             }
         });
     }
@@ -51,9 +51,9 @@ function userDetailController($scope, $http) {
     $scope.editUser = function () {
         $scope.users.forEach(element => {
             if (element.id == $scope.id) {
-                element.name = $scope.editedName;
-                element.phone = $scope.editedPhone;
-                element.city = $scope.editedCity;
+                element.name = $scope.userName;
+                element.phone = $scope.userPhone;
+                element.city = $scope.userCity;
             }
         });
     }
