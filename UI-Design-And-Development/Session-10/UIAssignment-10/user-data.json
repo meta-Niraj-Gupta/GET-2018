@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "Niraj",
+        "phone": "9874563210",
+        "city": "Jaipur"
+        },
+    {
+        "id": "2",
+        "name": "Sourav",
+        "phone": "9632587410",
+        "city": "Jaipur"
+        },
+    {
+        "id": "3",
+        "name": "Abhay",
+        "phone": "9513074268",
+        "city": "Jaipur"
+        },
+    {
+        "id": "4",
+        "name": "Namrata",
+        "phone": "9845632017",
+        "city": "Jaipur"
+        },
+    {
+        "id": "5",
+        "name": "Tanu",
+        "phone": "9874563210",
+        "city": "Jaipur"
+        }
+]
