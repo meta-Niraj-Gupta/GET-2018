@@ -16,7 +16,7 @@
     <section class="container">
         <div class="clearfix pt-5">
             <h3 class="float-left">Users</h3>
-            <button type="button" class="btn float-right py-0 mt-1 mr-5" ng-click="clearAll()" data-toggle="modal" data-target="#adduser">Add User</button>
+            <button type="button" class="btn float-right py-0 mt-1 mr-5" data-toggle="modal" data-target="#adduser">Add User</button>
         </div>
     </section>
     <section class="container row">
@@ -80,7 +80,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal" style="color: gray">Cancel</button>
-                    <button type="button" class="btn btn-primary" ng-click="addUser()">Save</button>
+                    <button type="button" class="btn btn-primary" ng-click="addUser(); clearAll()">Save</button>
                 </div>
             </div>
         </div>
