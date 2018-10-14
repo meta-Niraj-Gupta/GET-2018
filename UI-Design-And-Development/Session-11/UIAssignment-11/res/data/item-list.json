@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "name": "Broccoli",
+        "price": 23.34,
+        "descriptiton": "Hari Gobhi",
+        "imagePath": "/res/images/items/1.png",
+        "category": "1"
+    },
+    {
+        "id": 2,
+        "name": "Lady Finger",
+        "price": 23,
+        "descriptiton": "Hari Gobhi",
+        "imagePath": "/res/images/items/2.png",
+        "category": "1"
+    },
+    {
+        "id": 3,
+        "name": "Cucumber",
+        "price": 10,
+        "descriptiton": "Green",
+        "imagePath": "/res/images/items/3.png",
+        "category": "1"
+    },
+    {
+        "id": 4,
+        "name": "Corn",
+        "price": 34,
+        "descriptiton": "Indian",
+        "imagePath": "/res/images/items/4.png",
+        "category": "1"
+    },
+    {
+        "id": 5,
+        "name": "Tomato",
+        "price": 23,
+        "descriptiton": "Red Tomatoes",
+        "imagePath": "/res/images/items/5.png",
+        "category": "1"
+    },
+    {
+        "id": 21,
+        "name": "Broccoli",
+        "price": 23.34,
+        "descriptiton": "Hari Gobhi",
+        "imagePath": "/res/images/items/1.png",
+        "category": "2"
+    },
+    {
+        "id": 22,
+        "name": "Lady Finger",
+        "price": 23,
+        "descriptiton": "Hari Gobhi",
+        "imagePath": "/res/images/items/2.png",
+        "category": "2"
+    },
+    {
+        "id": 23,
+        "name": "Cucumber",
+        "price": 10,
+        "descriptiton": "Green",
+        "imagePath": "/res/images/items/3.png",
+        "category": "2"
+    },
+    {
+        "id": 24,
+        "name": "Corn",
+        "price": 34,
+        "descriptiton": "Indian",
+        "imagePath": "/res/images/items/4.png",
+        "category": "2"
+    },
+    {
+        "id": 25,
+        "name": "Tomato",
+        "price": 23,
+        "descriptiton": "Red Tomatoes",
+        "imagePath": "/res/images/items/5.png",
+        "category": "2"
+    },
+    {
+        "id": 31,
+        "name": "Broccoli",
+        "price": 23.34,
+        "descriptiton": "Hari Gobhi",
+        "imagePath": "/res/images/items/1.png",
+        "category": "3"
+    },
+    {
+        "id": 32,
+        "name": "Lady Finger",
+        "price": 23,
+        "descriptiton": "Hari Gobhi",
+        "imagePath": "/res/images/items/2.png",
+        "category": "3"
+    },
+    {
+        "id": 33,
+        "name": "Cucumber",
+        "price": 10,
+        "descriptiton": "Green",
+        "imagePath": "/res/images/items/3.png",
+        "category": "3"
+    },
+    {
+        "id": 34,
+        "name": "Corn",
+        "price": 34,
+        "descriptiton": "Indian",
+        "imagePath": "/res/images/items/4.png",
+        "category": "3"
+    },
+    {
+        "id": 35,
+        "name": "Tomato",
+        "price": 23,
+        "descriptiton": "Red Tomatoes",
+        "imagePath": "/res/images/items/5.png",
+        "category": "3"
+    },
+    {
+        "id": 41,
+        "name": "Broccoli",
+        "price": 23.34,
+        "descriptiton": "Hari Gobhi",
+        "imagePath": "/res/images/items/1.png",
+        "category": "4"
+    },
+    {
+        "id": 42,
+        "name": "Lady Finger",
+        "price": 23,
+        "descriptiton": "Hari Gobhi",
+        "imagePath": "/res/images/items/2.png",
+        "category": "4"
+    },
+    {
+        "id": 43,
+        "name": "Cucumber",
+        "price": 10,
+        "descriptiton": "Green",
+        "imagePath": "/res/images/items/3.png",
+        "category": "4"
+    },
+    {
+        "id": 44,
+        "name": "Corn",
+        "price": 34,
+        "descriptiton": "Indian",
+        "imagePath": "/res/images/items/4.png",
+        "category": "4"
+    },
+    {
+        "id": 45,
+        "name": "Tomato",
+        "price": 23,
+        "descriptiton": "Red Tomatoes",
+        "imagePath": "/res/images/items/5.png",
+        "category": "4"
+    }
+]

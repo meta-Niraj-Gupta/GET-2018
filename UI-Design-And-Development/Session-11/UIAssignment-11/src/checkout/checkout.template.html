@@ -1,0 +1,41 @@
+<h1>Shipping</h1>
+<div class="row" id="checkout">
+    <div class="col-md-6">
+        <form ng-submit="placeOrder()">
+            Name
+            <div>
+                <input class="form-control mb-2" type="text" name="name" ng-model="userDetail.name" ng-init="userDetail.name=''" required>
+            </div>
+            Address
+            <div>
+                <input class="form-control mb-2" type="text" name="line1" ng-model="userDetail.line1" placeholder="Line 1" ng-init="userDetail.line1=''" required>
+            </div>
+            <div>
+                <input class="form-control mb-2" type="text" name="line2" ng-model="userDetail.line2" placeholder="Line 2" ng-init="userDetail.line2=''" required>
+            </div>
+            City
+            <div>
+                <input class="form-control mb-2" type="text" name="city" ng-model="userDetail.city" ng-init="userDetail.city=''" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Place Order">
+        </form>
+    </div>
+    <div class="col-md-6">
+        <div class="card order-summary">
+            <div class="p-3">
+                <div>
+                    <h2>Order Summary</h2>
+                    <div>You have {{cart.getTotalCount()}} items in your shoppping cart</div>
+                </div>
+                <div class="d-flex justify-content-between" ng-repeat="item in cart.getItems()">
+                    <span>{{cart.getCount(item.id) + ' x ' + items[item.id].name}}</span>
+                    <span>${{cart.getCount(item.id) * items[item.id].price}}</span>
+                </div>
+                <span class="d-flex justify-content-between thead">
+                    <span>Total</span>
+                    <span>${{cart.getTotalPrice()}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
