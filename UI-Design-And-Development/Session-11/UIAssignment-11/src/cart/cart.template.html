@@ -1,0 +1,38 @@
+<div id="cart">
+    <div>
+        <h1 class="mb-3">Shopping Cart</h1>
+        <div class="card">
+            <div class="p-3">
+                <div class="thead d-flex justify-content-between">
+                    <span>You have {{cart.getTotalCount()}} items in your shoppping cart</span>
+                    <a class="link-dark" ng-click="cart.empty()">Clear Shopping Cart</a>
+                </div>
+            </div>
+            <div class="thead row">
+                <span class="col-3"></span>
+                <span class="col-3 text-left">Product</span>
+                <span class="col-3 text-center">Quantity</span>
+                <span class="col-3 text-right">Price</span>
+            </div>
+            <div class="market-item row" ng-repeat="item in cart.getItems()">
+                <span class="col-3 d-flex">
+                    <div class="item-image" ng-style="{'background-image': 'url(' + items[item.id].imagePath + ')'}">
+                    </div>
+                </span>
+                <span class="col-3 d-flex">{{items[item.id].name}}</span>
+                <span class="col-3  d-flex justify-content-center">
+                    <div class="d-flex justify-content-between align-items-start" ng-show="cart.getCount(item.id)">
+                        <a ng-click="cart.remove(item.id)" class="btn btn-secondary mx-2">-</a>
+                        {{cart.getCount(item.id)}} in cart
+                        <a ng-click="cart.add(item.id)" class="btn btn-secondary mx-2">+</a>
+                    </div>
+                </span>
+                <span class="col-3 text-right">
+                    ${{cart.getCount(item.id) * items[item.id].price}}
+                </span>
+            </div>
+            <div class="final row d-flex justify-content-end">${{cart.getTotalPrice()}}</div>
+        </div>
+        <a ng-href="#!/check-out" class="btn btn-primary mt-2">Check Out</a>
+    </div>
+</div>
